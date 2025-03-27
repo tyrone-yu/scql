@@ -288,7 +288,7 @@
     {
       "name": "count & distinct & if after join",
       "query": "select count(distinct (if(alice.encrypt_int_0>1, bob.join_string_0, 'aaaaa'))) as cd from alice_tbl_0 as alice inner join bob_tbl_0 as bob on alice.join_string_0=bob.join_string_0 group by bob.groupby_int_0;",
-      "mysql_query": "select count(distinct (if(alice.encrypt_int_0>1, bob.join_string_0, 'aaaaa'))) as cd from alice.tbl_0 as alice inner join bob.tbl_0 as bob on alice.join_string_0=bob.join_string_0 group by bob.groupby_int_0;"
+      "mysql_query": "select count(distinct (if(alice.encrypt_int_0>1, bob.join_string_0, 'aaaaa'))) as cd from alice.tbl_0 as alice inner join bob.tbl_0 as bob on alice.join_string_0=bob.join_string_0 group by bob.groupby_int_0 having count(*) >= 4;"
     },
     {
       "name": "logic after join",
